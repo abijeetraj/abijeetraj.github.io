@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Research | Abijeet Rajasekaran</title>
+<meta name="description" content="Abijeet Rajasekaran: machine learning researcher working on uncertainty in scientific machine learning.">
+<style>
+:root {
+  --bg: #121212;
+  --fg: #e4e4e4;
+  --muted: #a0a0a0;
+  --link: #9fc2ea;
+  --font: "Times New Roman", Times, "Liberation Serif", serif;
+  color-scheme: dark;
+}
+html, body { background: var(--bg); }
+body {
+  margin: 0;
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 19px;
+  line-height: 1.5;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 44rem; margin: 0 auto; padding-block: 3rem 3rem; }
+a { color: var(--link); text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+p { margin: 0 0 1em; }
+
+header {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: .5rem 2rem; margin-bottom: 2.5rem;
+}
+.name { font-size: 1.45rem; color: var(--fg); text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: .25rem 1.2rem; }
+nav a { text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+nav a[aria-current="page"] { color: var(--fg); }
+
+h1 { font-size: 1.6rem; font-weight: normal; margin: 0 0 1.5rem; }
+h2 { font-size: 1.1rem; font-weight: bold; margin: 0; line-height: 1.35; }
+
+.list { list-style: none; margin: 0; padding: 0; }
+.list > li { margin-bottom: 1.9rem; }
+.list p { margin: 0; }
+
+/* CV-style entry: left column wraps, right column (date, location) stays on the first line */
+.entry .row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 1.5rem;
+  align-items: baseline;
+}
+.entry .row > :last-child { text-align: right; white-space: nowrap; }
+.entry .inst { margin-top: .15rem; }
+.entry .loc { color: var(--muted); font-style: italic; }
+.entry .pi { color: var(--muted); font-style: italic; margin-top: .05rem; }
+.entry .desc { margin-top: .5rem; }
+.entry .status { color: var(--muted); font-style: italic; margin-top: .3rem; }
+
+footer { margin-top: 3rem; color: var(--muted); font-size: .9rem; }
+
+@media (max-width: 640px) {
+  body { font-size: 18px; }
+  .wrap { padding-block: 2rem; }
+  .entry .row { grid-template-columns: minmax(0, 1fr); }
+  .entry .row > :last-child { text-align: left; }
+  .entry .row .date { margin-top: .1rem; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="name" href="index.html">Abijeet Rajasekaran</a>
+    <nav aria-label="Pages">
+      <a href="index.html">Home</a>
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="outreach.html">Outreach</a>
+      <a href="misc.html">Misc</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Research Themes</h1>
+    <ul class="list">
+
+      <li class="entry">
+        <div class="row">
+          <h2>Uncertainty in rollouts of learned time-stepping operators</h2>
+          <span class="date">Aug 2026&ndash;present</span>
+        </div>
+        <div class="row inst">
+          <span>Johns Hopkins University</span>
+          <span class="loc">Baltimore, MD</span>
+        </div>
+        <p class="pi">PI: Dr. Somdatta Goswami</p>
+        <p class="desc">Studying how uncertainty propagates through autoregressive rollouts of learned time-stepping neural operators (DeepONet family), where errors compound as each prediction becomes the next input. The direction I am proposing is to separate per-step model error from the system's chaotic amplification, and to use the resulting uncertainty to weight ensemble Kalman filter updates in place of hand-tuned inflation, on benchmarks such as Lorenz-96, Kuramoto&ndash;Sivashinsky and 2D Kolmogorov flow.</p>
+        <p class="status">Ongoing.</p>
+      </li>
+
+      <li class="entry">
+        <div class="row">
+          <h2>GPU acceleration of a differentiable PDE solver</h2>
+          <span class="date">Aug 2026&ndash;present</span>
+        </div>
+        <div class="row inst">
+          <span>Johns Hopkins University</span>
+          <span class="loc">Baltimore, MD</span>
+        </div>
+        <p class="pi">PI: Dr. Somdatta Goswami</p>
+        <p class="desc">Accelerating the group's differentiable finite-element PDE solver on GPUs by writing custom sparse CUDA kernels and testing multigrid preconditioners and Krylov methods, so that ensemble and Bayesian methods become affordable without large clusters.</p>
+        <p class="status">Ongoing.</p>
+      </li>
+
+      <li class="entry">
+        <div class="row">
+          <h2>Uncertainty-Aware Machine Learning and Inverse Mix Design for Engineered Cementitious Composites</h2>
+          <span class="date">Dec 2025&ndash;June 2026</span>
+        </div>
+        <div class="row inst">
+          <span>University of Texas Rio Grande Valley</span>
+          <span class="loc">Edinburg, TX</span>
+        </div>
+        <p class="pi">PI: Dr. Jinwoo An</p>
+        <p class="desc">Built a calibrated surrogate for engineered cementitious composites from sparse experimental data, replacing point predictions with distribution-free conformal intervals that carry finite-sample coverage guarantees. Decomposing the predictive variance showed that about 68% of it was epistemic, so the bottleneck was missing information rather than noise. Predictions were stress-tested with Monte Carlo simulation of input and process variability.</p>
+      </li>
+
+      <li class="entry">
+        <div class="row">
+          <h2>Vision-Guided Williams-Enriched Physics Informed Neural Network for Mesh-Free Stress Intensity Factor Assessment of Cracked Concrete</h2>
+          <span class="date">Dec 2025&ndash;June 2026</span>
+        </div>
+        <div class="row inst">
+          <span>University of Texas Rio Grande Valley</span>
+          <span class="loc">Edinburg, TX</span>
+        </div>
+        <p class="pi">PI: Dr. Jinwoo An</p>
+        <p class="desc">Proposed and built a pipeline that extracts crack geometry from images and passes it to a physics-informed neural network (PINN) that estimates the stress intensity factor, automating a modeling step that is otherwise done by hand. Along the way I diagnosed the PINN's failure at the crack-tip singularity (spectral bias) and replaced the residual loss with a variational objective and a J-integral read-out, which needs no tuned loss weights.</p>
+      </li>
+
+      <li class="entry">
+        <div class="row">
+          <h2>Cross-modal adaptive exploration and chemo-visual hazard-aware navigation for autonomous robotic inspection in hazardous environments</h2>
+          <span class="date">May 2025&ndash;Dec 2025</span>
+        </div>
+        <div class="row inst">
+          <span>Kyungpook National University</span>
+          <span class="loc">Remote</span>
+        </div>
+        <p class="pi">PIs: Dr. Bubryur Kim and Dr. Yuvaraj Natarajan</p>
+        <p class="desc">As the project's first member and lead, designed the perception module for a rover that maps fire, smoke and chemical hazards: a real-time object detector adapted from a single-stage architecture, reaching mAP@0.5 of 0.845 across six hazard classes with 24.3 ms inference on a Jetson Orin Nano. Vision was fused with chemical sensors through a Kalman filter whose noise levels had to be set by hand, because the perception model gave no calibrated uncertainty. That problem is what led me to uncertainty quantification.</p>
+        <p class="status">Indian Patent Application No. 202641072251 (Published).</p>
+      </li>
+
+    </ul>
+  </main>
+  <footer>Updated October 2026.</footer>
+</div>
+</body>
+</html>
